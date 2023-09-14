@@ -1,6 +1,9 @@
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.*;
 
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.*;
+
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -49,11 +52,12 @@ public class RunTest {
     @Test
     public void mainOpenTest() {
         System.out.println(" Main open Demoqa test");
-
         open("https://demoqa.com/automation-practice-form");
-
+        $("#app > header > a").click();
+        $("#newPageTitle").shouldBe(visible);
         String pageURL = getWebDriver().getCurrentUrl();
-        Assertions.assertTrue(pageURL.contains("https://demoqa.com/automation-practice-form"), "Не верный URL");
+        System.out.println(pageURL);
+        Assertions.assertTrue(pageURL.contains("https://demoqa.com"), "Не верный URL");
     }
 
 }
