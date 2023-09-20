@@ -4,27 +4,37 @@ import WebHooks.WebHooks;
 import org.junit.jupiter.api.Test;
 
 import static PageObjects.PageSteps.Authorization.*;
+import static PageObjects.PageSteps.OpenProject.countIssue;
+import static PageObjects.PageSteps.OpenProject.openProject;
 import static PageObjects.PageSteps.OpenUrl.checkUrlPageHref;
 import static PageObjects.PageSteps.OpenUrl.openUrl;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class TestIfellowEdujira extends WebHooks {
 
+    String url = "https://edujira.ifellow.ru";
     @Test
     public void openUrlTest() {
-        System.out.println("Test_Open_Url");
-        openUrl("https://edujira.ifellow.ru");
-        checkUrlPageHref("https://edujira.ifellow.ru");
+        System.out.println("Test Open Url");
+        openUrl(url);
+        checkUrlPageHref(url);
     };
 
     @Test
     public void authorizationTest() {
-        System.out.println("Test_Authorization");
-        openUrl("https://edujira.ifellow.ru");
+        System.out.println("Test Authorization");
+        openUrl(url);
         authorization();
         profileLogIn();
         authorizationCheck();
     };
 
+    @Test
+    public void openProjectTest() {
+        System.out.println("Test open Project");
+        openUrl(url);
+        authorization();
+        openProject();
+        countIssue();
+    };
 
 }
