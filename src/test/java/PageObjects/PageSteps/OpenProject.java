@@ -9,8 +9,8 @@ public class OpenProject extends HomePage {
 
     public static void openProject() {
 
-        buttonClick(goToProjectButton, "Project Button");
-        buttonClick(goToProjectLink, "Project Link");
+        buttonClick(openProjectButton, "Project Button");
+        buttonClick(openProjectLink, "Project Link");
         buttonClick(allIssues, "Задачи");
 
 

@@ -19,6 +19,6 @@ public class InputFieldClickButton {
     public static void buttonClick(SelenideElement xpath, String buttonName) {
         xpath.shouldBe(Condition.visible);
         assert xpath.is(Condition.visible) : buttonName + " не отображается на странице или не кликабельна.";
-        xpath.click();
+        xpath.shouldBe(Condition.enabled).click();
     }
 }
