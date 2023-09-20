@@ -1,11 +1,11 @@
-package Web_Hooks;
+package WebHooks;
 
 
 import com.codeborne.selenide.WebDriverRunner;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
-public class Web_Hooks {
+public class WebHooks {
 
     @BeforeAll
     public static void before_Class() {
