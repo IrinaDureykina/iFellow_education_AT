@@ -24,9 +24,14 @@ hs_err_pid*
 replay_pid*
 
 ### IntelliJ IDEA ###
+.idea/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+*.iml
+*.iws
+.idea/**/dataSources/
+.idea/replstate.xml
 
 ### Eclipse ###
 .apt_generated
@@ -54,16 +59,8 @@ bin/
 .DS_Store
 
 # Example
-
 temp/
 .zip
-
-# Intellij
-.idea/
-*.iml
-*.iws
-.idea/**/dataSources/
-.idea/replstate.xml
 
 # Maven
 log/
