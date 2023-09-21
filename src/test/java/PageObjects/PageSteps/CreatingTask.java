@@ -18,17 +18,9 @@ public class CreatingTask extends CreatingTaskForm {
 
 
         buttonClick(CreateIssueButton, "Create Issues Button");
+        messageIssueKey.shouldBe(Condition.visible);
+        assert messageIssueKey.is(Condition.visible) : "Задача не создана";
 
-//
-        returnIssueKey.shouldBe(Condition.visible).getOwnText();
-        assert returnIssueKey.is(Condition.visible) : "Задача не создана";
-
-//
-//        String target = " - "+inputTheme;
-//        String issueKey = newIssueKey.replace(target, "");
-//        assert !issueKey.isEmpty() : "Нет номера задачи.";
-//        System.out.println(issueKey);
-//        return issueKey;
     };
 
     public static void switchingTask(){

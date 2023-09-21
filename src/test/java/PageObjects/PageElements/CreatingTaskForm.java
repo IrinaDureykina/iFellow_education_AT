@@ -13,5 +13,5 @@ public class CreatingTaskForm {
 
     public static SelenideElement CreateIssueButton = $x(" //input[@id='create-issue-submit' and @value='Создать']");
 
-    public static SelenideElement returnIssueKey = $x(" //div[contains(text(),'Запрос ')]/a");
+    public static SelenideElement messageIssueKey = $x(" //div[contains(text(),'Запрос ')]/a");
 }
