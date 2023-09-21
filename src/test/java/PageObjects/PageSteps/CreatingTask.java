@@ -11,7 +11,7 @@ import static PageObjects.PageSteps.InputFieldClickButton.*;
 public class CreatingTask extends CreatingTaskForm {
     public static void creatingTask(){
         String inputTheme = "Тема Ошибки";
-        buttonClick(createBatton, "Create Button");
+        buttonClick(createBatton, "Создать");
         issueTypeSelect.shouldBe(Condition.visible).doubleClick();
         inputField(issueTypeSelect, "Ошибка", "Тип Задачи", true );
         inputField(issueSummary, inputTheme, "Тема", false);
