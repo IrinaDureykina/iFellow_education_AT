@@ -16,10 +16,10 @@ public class Authorization extends EdujiraStartPage {
         buttonClick(battonLogin, "Кнопка 'Войти'");
     }
 
-    public static void profileLogIn(){
-        buttonClick(profileBatton,"Кнопка пользовательский профиль");
-        buttonClick(profileLink,"Ссылка профиль");
-    };
+    public static void profileLogIn() {
+        buttonClick(profileBatton, "Кнопка пользовательский профиль");
+        buttonClick(profileLink, "Ссылка профиль");
+    }
 
     public static void authorizationCheck() {
         Assertions.assertEquals(nameUser.shouldBe(Condition.visible).getOwnText(), "AT5", "Не авторизованы");

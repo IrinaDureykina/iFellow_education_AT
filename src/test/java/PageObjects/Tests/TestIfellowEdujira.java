@@ -12,17 +12,17 @@ import static PageObjects.PageSteps.OpenUrl.checkUrlPageHref;
 import static PageObjects.PageSteps.OpenUrl.openUrl;
 import static PageObjects.PageSteps.SelectionTask.selectedTaskCheck;
 import static PageObjects.PageSteps.SelectionTask.selectionTask;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class TestIfellowEdujira extends WebHooks {
 
     String url = "https://edujira.ifellow.ru";
+
     @Test
     public void openUrlTest() {
         System.out.println("Test Open Url");
         openUrl(url);
         checkUrlPageHref(url);
-    };
+    }
 
     @Test
     public void authorizationTest() {
@@ -31,7 +31,7 @@ public class TestIfellowEdujira extends WebHooks {
         authorization();
         profileLogIn();
         authorizationCheck();
-    };
+    }
 
     @Test
     public void openProjectTest() {
@@ -40,7 +40,7 @@ public class TestIfellowEdujira extends WebHooks {
         authorization();
         openProject();
         countIssue();
-    };
+    }
 
     @Test
     public void selectTaskTest() {
@@ -50,7 +50,7 @@ public class TestIfellowEdujira extends WebHooks {
         profileLogIn();
         selectionTask("TestSelenium");
         selectedTaskCheck();
-    };
+    }
 
     @Test
     public void creatingTaskTest() {
@@ -60,7 +60,5 @@ public class TestIfellowEdujira extends WebHooks {
         profileLogIn();
         creatingTask();
         switchingTask();
-    };
-
-
+    }
 }

@@ -13,16 +13,16 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class OpenUrl extends EdujiraStartPage {
-    public static void openUrl(String url){
+    public static void openUrl(String url) {
         open(url);
         getWebDriver().manage().window().maximize();
         assert $(By.tagName("body")).shouldBe(Condition.visible).exists() : "На странице отсутствует Body.";
-    };
+    }
 
-    public static void checkUrlPageHref(String url){
+    public static void checkUrlPageHref(String url) {
         Assertions.assertTrue(Objects.requireNonNull(homePageHref.shouldBe(Condition.visible).attr("href"))
                         .contains("https://edujira.ifellow.ru/"),
                 "Страница не содержит ссылки на главную страницу или она не верна");
-        Assertions.assertTrue (WebDriverRunner.url().contains( url ), "URL не совпадает с введенным");
-    };
+        Assertions.assertTrue(WebDriverRunner.url().contains(url), "URL не совпадает с введенным");
+    }
 }
