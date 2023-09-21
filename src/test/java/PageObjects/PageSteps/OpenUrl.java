@@ -14,7 +14,6 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class OpenUrl extends EdujiraStartPage {
     public static void openUrl(String url){
-        System.out.println("Open: "+ url);
         open(url);
         getWebDriver().manage().window().maximize();
         assert $(By.tagName("body")).shouldBe(Condition.visible).exists() : "На странице отсутствует Body.";

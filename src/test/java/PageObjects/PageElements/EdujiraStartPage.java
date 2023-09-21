@@ -11,6 +11,4 @@ public class EdujiraStartPage {
     public static SelenideElement inputPassword = $x("//input[@id='login-form-password' and @name='os_password']");
 
     public static SelenideElement battonLogin = $x("//input[@id='login' and @value='Войти']");
-
-
 }

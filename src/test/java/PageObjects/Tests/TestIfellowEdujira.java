@@ -8,6 +8,8 @@ import static PageObjects.PageSteps.OpenProject.countIssue;
 import static PageObjects.PageSteps.OpenProject.openProject;
 import static PageObjects.PageSteps.OpenUrl.checkUrlPageHref;
 import static PageObjects.PageSteps.OpenUrl.openUrl;
+import static PageObjects.PageSteps.SelectionTask.searchTaskCheck;
+import static PageObjects.PageSteps.SelectionTask.selectionTask;
 
 public class TestIfellowEdujira extends WebHooks {
 
@@ -35,6 +37,18 @@ public class TestIfellowEdujira extends WebHooks {
         authorization();
         openProject();
         countIssue();
+    };
+
+    @Test
+    public void selectTaskTest() {
+        System.out.println("Test Selection Task");
+        openUrl(url);
+        authorization();
+        profileLogIn();
+        selectionTask();
+        searchTaskCheck();
+
+
     };
 
 }

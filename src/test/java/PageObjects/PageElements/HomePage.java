@@ -18,4 +18,12 @@ public class HomePage {
     public static SelenideElement openProjectLink = $x("//a[contains(text(),'Test (TEST)')]");
 
     public static SelenideElement countIssues = $x("//div[@class='pager']/div[@class='showing']/span[contains(text(),'1 из')]");
+
+    public static SelenideElement searchInput = $x("//input[@id='quickSearchInput']");
+
+    public static SelenideElement taskLink = $x("//a[@id='key-val']");
+
+    public static SelenideElement taskStatus = $x("//span[@id='status-val']//following-sibling::span");
+
+    public static SelenideElement taskVersions = $x("//span[@id='versions-val' and @title='Нажмите, чтобы изменить']");
 }
