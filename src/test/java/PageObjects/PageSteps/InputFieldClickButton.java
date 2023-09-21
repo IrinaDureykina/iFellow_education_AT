@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
 
+import static com.codeborne.selenide.Selenide.sleep;
+
 public class InputFieldClickButton {
 
     public static void inputField(SelenideElement xpath, String valueField, String fieldName, boolean key) {

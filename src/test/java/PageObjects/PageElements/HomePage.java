@@ -23,7 +23,11 @@ public class HomePage {
 
     public static SelenideElement taskLink = $x("//a[@id='key-val']");
 
-    public static SelenideElement taskStatus = $x("//span[@id='status-val']//following-sibling::span");
+    public static SelenideElement createBatton = $x("//a[@id='create_link' and contains(text(),'Создать')]");
 
-    public static SelenideElement taskVersions = $x("//span[@id='versions-val' and @title='Нажмите, чтобы изменить']");
+    public static SelenideElement tasksButton = $x("//a[@id='find_link' and @title='Поиск и просмотр недавних задач']");
+
+    public static SelenideElement reportedByMeButton = $x("//a[@id='filter_lnk_reported_lnk' and contains(text(),'Сообщенные мной')]");
+
+
 }
