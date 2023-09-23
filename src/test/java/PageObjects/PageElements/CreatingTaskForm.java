@@ -23,11 +23,11 @@ public class CreatingTaskForm {
 
     public static SelenideElement tagsSlectorClik = $x("//div[@id='labels-multi-select']/span");
 
-    public static SelenideElement tagsSlector = $x("(//ul[@id=\"предложения\"]/li/a)[2]");
+    public static SelenideElement tagsSlector = $x("(//ul[@id=\"предложения\"]/li/a)[1]");
 
     public static SelenideElement affectedVersionsSelector = $x("//label[contains(text(),'Затронуты версии')]//following-sibling::select//descendant::option[@value='10000']");
 
-    public static SelenideElement relatedTagsSlector = $x("//select[@id='issuelinks-linktype']/option[@value='duplicates']");
+    public static SelenideElement relatedTagsSlector = $x("//select[@id='issuelinks-linktype']/option[@value='blocks']");
 
     public static SelenideElement taskSlectorClik = $x("//div[@id='issuelinks-issues-multi-select']/span");
 

@@ -16,17 +16,21 @@ public class CreatingTask extends CreatingTaskForm {
         issueTypeSelect.shouldBe(Condition.visible).doubleClick();
         inputField(issueTypeSelect, "Ошибка", "Тип Задачи", true);
         inputField(issueSummary, inputTheme, "Тема", false);
-        fixVersionSelector.click();
+
+        // Добавить поле описание
+
+        buttonClick(fixVersionSelector,"Исправить в версиях ");
         priorityselector.doubleClick();
         inputField(priorityselector, "Highest", "Приоритет", true);
-        tagsSlectorClik.click();
-        tagsSlector.click();
-        tagsSlectorClik.click();
-        tagsSlector.click();
-        affectedVersionsSelector.click();
-        relatedTagsSlector.click();
-        taskSlectorClik.click();
-        taskSlector.click();
+        buttonClick(tagsSlectorClik, "Селектор Метки");
+        buttonClick(tagsSlector, "Выбор 1 Метки");
+        buttonClick(tagsSlectorClik, "Селектор Метки");
+        buttonClick(tagsSlector, "Выбор 1 Метки");
+        buttonClick(affectedVersionsSelector, "Затронуты версии");
+        buttonClick(relatedTagsSlector, "Селектор Связанные задачи");
+        buttonClick(taskSlectorClik, "Задачи");
+        buttonClick(taskSlector, "Выбор '3' Задачи");
+
         buttonClick(appointMeButton, "Назначить меня");
         buttonClick(CreateIssueButton, "Create Issues Button");
         messageIssueKey.shouldBe(Condition.visible);

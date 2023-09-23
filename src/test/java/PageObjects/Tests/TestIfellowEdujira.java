@@ -15,19 +15,19 @@ import static PageObjects.PageSteps.SelectionTask.selectionTask;
 
 public class TestIfellowEdujira extends WebHooks {
 
-    String url = "https://edujira.ifellow.ru";
+    final String URL = "https://edujira.ifellow.ru";
 
     @Test
     public void openUrlTest() {
         System.out.println("Test Open Url");
-        openUrl(url);
-        checkUrlPageHref(url);
+        openUrl(URL);
+        checkUrlPageHref(URL);
     }
 
     @Test
     public void authorizationTest() {
         System.out.println("Test Authorization");
-        openUrl(url);
+        openUrl(URL);
         authorization();
         profileLogIn();
         authorizationCheck();
@@ -36,7 +36,7 @@ public class TestIfellowEdujira extends WebHooks {
     @Test
     public void openProjectTest() {
         System.out.println("Test open Project");
-        openUrl(url);
+        openUrl(URL);
         authorization();
         openProject();
         countIssue();
@@ -45,7 +45,7 @@ public class TestIfellowEdujira extends WebHooks {
     @Test
     public void selectTaskTest() {
         System.out.println("Test Selection Task");
-        openUrl(url);
+        openUrl(URL);
         authorization();
         profileLogIn();
         selectionTask("TestSelenium");
@@ -55,7 +55,7 @@ public class TestIfellowEdujira extends WebHooks {
     @Test
     public void creatingTaskTest() {
         System.out.println("Test Сreating Task");
-        openUrl(url);
+        openUrl(URL);
         authorization();
         profileLogIn();
         creatingTask();
