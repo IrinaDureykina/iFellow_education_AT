@@ -10,10 +10,10 @@ import static util.Config.getProperties;
 public class OpenProject extends HomePage {
 
     @Then("Заходим в проект {string}")
-    public static void openProject(String nameTaskKey) {
+    public static void openProject(String nameProjectKey) {
 
         buttonClick(openProjectButton, "Project Button");
-        buttonClick(openProjectLink(getProperties(nameTaskKey)), "Project Link");
+        buttonClick(openProjectLink(getProperties(nameProjectKey)), "Project Link");
         buttonClick(allIssues, "Задачи");
     }
 

@@ -17,15 +17,15 @@ Feature: ifellowEduJiraTest
   @openProjectTest
   Scenario: Заходим в проект и получаем количество задач в проекте
     When Вводим "login" вводим "password" и нажимаем Войти
-    Then Заходим в проект "nameTask"
+    Then Заходим в проект "nameProject"
     Then Получаем количество задач в проекте
 
   @selectTaskTest
   Scenario: Поиск задачи по имени и просмотр статуса задачи и привязку к версии
     When Вводим "login" вводим "password" и нажимаем Войти
     Then Заходим в профиль
-    Then Производим поиск задачи по "taskName"
-    Then Сверяем статус задачи и привязку к заданной версии "affectedVersion"
+    Then Производим поиск задачи: "nameTask"
+    Then Сверяем "statusTask" и привязку "affectVersion"
 
 
   @creatingTaskTest

@@ -31,7 +31,7 @@ public class TestIfellowEdujira extends WebHooks {
     public void openProjectTest() {
         System.out.println("Test open Project");
         authorization("login", "password");
-        openProject("nameTask");
+        openProject("nameProject");
         countIssue();
     }
 
@@ -40,8 +40,8 @@ public class TestIfellowEdujira extends WebHooks {
         System.out.println("Test Selection Task");
         authorization("login", "password");
         profileLogIn();
-        selectionTask("TestSelenium");
-        selectedTaskCheck();
+        selectionTask("nameTask");
+        selectedTaskCheck("statusTask", "affectVersion");
     }
 
     @Test

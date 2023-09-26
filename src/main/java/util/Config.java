@@ -3,6 +3,8 @@ package util;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 public class Config {
@@ -11,20 +13,11 @@ public class Config {
     private static final Properties prop = new Properties();
 
     static {
-        InputStream input = null;
-        try {
-            input = new FileInputStream(CONFIG_FILE_PATH);
-            prop.load(input);
+        try(InputStream input = new FileInputStream(CONFIG_FILE_PATH)){
+            prop.load(new InputStreamReader(input, StandardCharsets.UTF_8));
         } catch (IOException ex) {
             System.err.println("Ошибка при загрузке конфигурации: " + ex.getMessage());
-        } finally {
-            if (input != null) {
-                try {
-                    input.close();
-                } catch (IOException e) {
-                    System.err.println("Ошибка при закрытии потока: " + e.getMessage());
-                }
-            }
+            ex.printStackTrace();
         }
     }
     public static String getProperties(String key) {
