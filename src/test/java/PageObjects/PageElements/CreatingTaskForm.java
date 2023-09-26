@@ -39,7 +39,11 @@ public class CreatingTaskForm {
 
     public static SelenideElement sprintSlector = $x(" (//ul[@id='предложения']/li[contains(@id,'доска-спринт')]/a)[1]");
 
+    public static SelenideElement returnFrameField = $x("//body[@id='tinymce']/p");
 
+    public static SelenideElement frameInputField(String text) {
+        return $x("//label[contains(text(),'" + text + "')]//following-sibling::div//iframe");
+    }
 
 
 }

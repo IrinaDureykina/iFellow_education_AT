@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Assertions;
 
 import static PageObjects.PageElements.BrowseTaskPage.*;
 import static PageObjects.PageElements.HomePage.*;
-import static PageObjects.PageSteps.InputFieldClickButton.buttonClick;
-import static PageObjects.PageSteps.InputFieldClickButton.inputField;
+import static PageObjects.PageSteps.InputFieldClickButton.*;
 
 public class CreatingTask extends CreatingTaskForm {
     public static void creatingTask() {
@@ -16,9 +15,7 @@ public class CreatingTask extends CreatingTaskForm {
         issueTypeSelect.shouldBe(Condition.visible).doubleClick();
         inputField(issueTypeSelect, "Ошибка", "Тип Задачи", true);
         inputField(issueSummary, inputTheme, "Тема", false);
-
-        // Добавить поле описание
-
+        inputFrame("Описание", "Описание Задачи");
         buttonClick(fixVersionSelector,"Исправить в версиях ");
         priorityselector.doubleClick();
         inputField(priorityselector, "Highest", "Приоритет", true);
@@ -26,11 +23,11 @@ public class CreatingTask extends CreatingTaskForm {
         buttonClick(tagsSlector, "Выбор 1 Метки");
         buttonClick(tagsSlectorClik, "Селектор Метки");
         buttonClick(tagsSlector, "Выбор 1 Метки");
+        inputFrame("Окружение", "Окружение Задачи");
         buttonClick(affectedVersionsSelector, "Затронуты версии");
         buttonClick(relatedTagsSlector, "Селектор Связанные задачи");
         buttonClick(taskSlectorClik, "Задачи");
         buttonClick(taskSlector, "Выбор '3' Задачи");
-
         buttonClick(appointMeButton, "Назначить меня");
         buttonClick(CreateIssueButton, "Create Issues Button");
         messageIssueKey.shouldBe(Condition.visible);
@@ -47,11 +44,13 @@ public class CreatingTask extends CreatingTaskForm {
         buttonClick(closeButton, "closeButton");
         buttonClick(businessProcessButton, "Бизнес процесс");
         buttonClick(executedButton, "Исполнено");
-        buttonClick(executedButtonForm, "Исполнено На форме Исполнено");
+        inputFrame("Комментарий", "Комментарий Задачи 'Задача исполнена'");
+        buttonClick(executedButtonForm, "Кнопка 'Исполнено' На форме Исполнено");
         buttonClick(closeButton, "closeButton");
         buttonClick(businessProcessButton, "Бизнес процесс");
         buttonClick(confirmedButton, "Подтверждено");
-        buttonClick(confirmedButtonForm, "Подтверждено На форме Подтверждено");
+        inputFrame("Комментарий", "Комментарий Задачи 'Задача подтверждена'");
+        buttonClick(confirmedButtonForm, "Кнопка 'Подтверждено' На форме Подтверждено");
         buttonClick(closeButton, "closeButton");
         Assertions.assertEquals("Готово", taskStatus.getOwnText(), "Не верный статус задачи");
     }
