@@ -15,7 +15,9 @@ public class HomePage {
 
     public static SelenideElement openProjectButton = $x("//a[contains(text(),'Проекты') and @aria-controls = 'browse_link-content']");
 
-    public static SelenideElement openProjectLink = $x("//a[contains(text(),'Test (TEST)')]");
+    public static SelenideElement openProjectLink(String text) {
+        return $x("//a[contains(text(),'" + text + "')]");
+    }
 
     public static SelenideElement countIssues = $x("//div[@class='pager']/div[@class='showing']/span[contains(text(),'1 из')]");
 

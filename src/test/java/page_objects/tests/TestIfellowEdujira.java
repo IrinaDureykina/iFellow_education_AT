@@ -22,23 +22,23 @@ public class TestIfellowEdujira extends WebHooks {
     @Test
     public void authorizationTest() {
         System.out.println("Test Authorization");
-        authorization();
+        authorization("login", "password");
         profileLogIn();
-        authorizationCheck();
+        authorizationCheck("login");
     }
 
     @Test
     public void openProjectTest() {
         System.out.println("Test open Project");
-        authorization();
-        openProject();
+        authorization("login", "password");
+        openProject("nameTask");
         countIssue();
     }
 
     @Test
     public void selectTaskTest() {
         System.out.println("Test Selection Task");
-        authorization();
+        authorization("login", "password");
         profileLogIn();
         selectionTask("TestSelenium");
         selectedTaskCheck();
@@ -47,7 +47,7 @@ public class TestIfellowEdujira extends WebHooks {
     @Test
     public void creatingTaskTest() {
         System.out.println("Test Сreating Task");
-        authorization();
+        authorization("login", "password");
         profileLogIn();
         creatingTask();
         switchingTask();

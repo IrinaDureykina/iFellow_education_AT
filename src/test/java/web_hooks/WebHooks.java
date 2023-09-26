@@ -30,7 +30,7 @@ public class WebHooks {
     @AfterEach
     @After
     public void afterClass() {
-        System.out.println("After: close web driver");
+        System.out.println("After: Close web driver");
         WebDriverRunner.closeWebDriver();
     }
 }
