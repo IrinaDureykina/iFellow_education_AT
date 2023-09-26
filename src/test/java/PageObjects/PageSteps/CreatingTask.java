@@ -16,7 +16,7 @@ public class CreatingTask extends CreatingTaskForm {
         inputField(issueTypeSelect, "Ошибка", "Тип Задачи", true);
         inputField(issueSummary, inputTheme, "Тема", false);
         inputFrame("Описание", "Описание Задачи");
-        buttonClick(fixVersionSelector,"Исправить в версиях ");
+        buttonClick(fixVersionSelector, "Исправить в версиях ");
         priorityselector.doubleClick();
         inputField(priorityselector, "Highest", "Приоритет", true);
         buttonClick(tagsSlectorClik, "Селектор Метки");
