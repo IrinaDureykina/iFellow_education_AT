@@ -1,9 +1,9 @@
-package PageObjects.PageSteps;
+package page_objects.page_steps;
 
-import PageObjects.PageElements.HomePage;
+import page_objects.page_elements.HomePage;
 import com.codeborne.selenide.Condition;
 
-import static PageObjects.PageSteps.InputFieldClickButton.buttonClick;
+import static page_objects.page_steps.InputFieldClickButton.buttonClick;
 
 public class OpenProject extends HomePage {
 

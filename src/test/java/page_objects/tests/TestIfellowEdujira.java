@@ -1,33 +1,27 @@
-package PageObjects.Tests;
+package page_objects.tests;
 
-import WebHooks.WebHooks;
+import web_hooks.WebHooks;
 import org.junit.jupiter.api.Test;
 
-import static PageObjects.PageSteps.Authorization.*;
-import static PageObjects.PageSteps.CreatingTask.creatingTask;
-import static PageObjects.PageSteps.CreatingTask.switchingTask;
-import static PageObjects.PageSteps.OpenProject.countIssue;
-import static PageObjects.PageSteps.OpenProject.openProject;
-import static PageObjects.PageSteps.OpenUrl.checkUrlPageHref;
-import static PageObjects.PageSteps.OpenUrl.openUrl;
-import static PageObjects.PageSteps.SelectionTask.selectedTaskCheck;
-import static PageObjects.PageSteps.SelectionTask.selectionTask;
+import static page_objects.page_steps.Authorization.*;
+import static page_objects.page_steps.CreatingTask.creatingTask;
+import static page_objects.page_steps.CreatingTask.switchingTask;
+import static page_objects.page_steps.OpenProject.countIssue;
+import static page_objects.page_steps.OpenProject.openProject;
+import static page_objects.page_steps.CheckUrl.checkUrlPageHref;
+import static page_objects.page_steps.SelectionTask.selectedTaskCheck;
+import static page_objects.page_steps.SelectionTask.selectionTask;
 
 public class TestIfellowEdujira extends WebHooks {
-
-    final String URL = "https://edujira.ifellow.ru";
-
     @Test
-    public void openUrlTest() {
-        System.out.println("Test Open Url");
-        openUrl(URL);
-        checkUrlPageHref(URL);
+    public void checkUrlTest() {
+        System.out.println("Test check Url");
+        checkUrlPageHref("URL");
     }
 
     @Test
     public void authorizationTest() {
         System.out.println("Test Authorization");
-        openUrl(URL);
         authorization();
         profileLogIn();
         authorizationCheck();
@@ -36,7 +30,6 @@ public class TestIfellowEdujira extends WebHooks {
     @Test
     public void openProjectTest() {
         System.out.println("Test open Project");
-        openUrl(URL);
         authorization();
         openProject();
         countIssue();
@@ -45,7 +38,6 @@ public class TestIfellowEdujira extends WebHooks {
     @Test
     public void selectTaskTest() {
         System.out.println("Test Selection Task");
-        openUrl(URL);
         authorization();
         profileLogIn();
         selectionTask("TestSelenium");
@@ -55,7 +47,6 @@ public class TestIfellowEdujira extends WebHooks {
     @Test
     public void creatingTaskTest() {
         System.out.println("Test Сreating Task");
-        openUrl(URL);
         authorization();
         profileLogIn();
         creatingTask();

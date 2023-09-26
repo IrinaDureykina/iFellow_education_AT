@@ -1,11 +1,11 @@
-package PageObjects.PageSteps;
+package page_objects.page_steps;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
 
-import static PageObjects.PageElements.CreatingTaskForm.frameInputField;
-import static PageObjects.PageElements.CreatingTaskForm.returnFrameField;
+import static page_objects.page_elements.CreatingTaskForm.frameInputField;
+import static page_objects.page_elements.CreatingTaskForm.returnFrameField;
 import static com.codeborne.selenide.Selenide.switchTo;
 
 public class InputFieldClickButton {

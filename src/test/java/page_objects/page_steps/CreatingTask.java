@@ -1,20 +1,19 @@
-package PageObjects.PageSteps;
+package page_objects.page_steps;
 
-import PageObjects.PageElements.CreatingTaskForm;
+import page_objects.page_elements.CreatingTaskForm;
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Assertions;
 
-import static PageObjects.PageElements.BrowseTaskPage.*;
-import static PageObjects.PageElements.HomePage.*;
-import static PageObjects.PageSteps.InputFieldClickButton.*;
+import static page_objects.page_elements.BrowseTaskPage.*;
+import static page_objects.page_elements.HomePage.*;
+import static page_objects.page_steps.InputFieldClickButton.*;
 
 public class CreatingTask extends CreatingTaskForm {
     public static void creatingTask() {
-        String inputTheme = "Тема Ошибки";
         buttonClick(createBatton, "Создать");
         issueTypeSelect.shouldBe(Condition.visible).doubleClick();
         inputField(issueTypeSelect, "Ошибка", "Тип Задачи", true);
-        inputField(issueSummary, inputTheme, "Тема", false);
+        inputField(issueSummary, "Тема Ошибки", "Тема", false);
         inputFrame("Описание", "Описание Задачи");
         buttonClick(fixVersionSelector, "Исправить в версиях ");
         priorityselector.doubleClick();

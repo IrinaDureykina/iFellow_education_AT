@@ -1,12 +1,12 @@
-package PageObjects.PageSteps;
+package page_objects.page_steps;
 
-import PageObjects.PageElements.HomePage;
+import page_objects.page_elements.HomePage;
 import org.junit.jupiter.api.Assertions;
 
-import static PageObjects.PageElements.BrowseTaskPage.taskStatus;
-import static PageObjects.PageElements.BrowseTaskPage.taskVersions;
-import static PageObjects.PageSteps.InputFieldClickButton.buttonClick;
-import static PageObjects.PageSteps.InputFieldClickButton.inputField;
+import static page_objects.page_elements.BrowseTaskPage.taskStatus;
+import static page_objects.page_elements.BrowseTaskPage.taskVersions;
+import static page_objects.page_steps.InputFieldClickButton.buttonClick;
+import static page_objects.page_steps.InputFieldClickButton.inputField;
 
 public class SelectionTask extends HomePage {
     public static void selectionTask(String nameTask) {

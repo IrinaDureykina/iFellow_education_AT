@@ -1,12 +1,12 @@
-package PageObjects.PageSteps;
+package page_objects.page_steps;
 
-import PageObjects.PageElements.EdujiraStartPage;
+import page_objects.page_elements.EdujiraStartPage;
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Assertions;
 
-import static PageObjects.PageElements.HomePage.*;
-import static PageObjects.PageSteps.InputFieldClickButton.buttonClick;
-import static PageObjects.PageSteps.InputFieldClickButton.inputField;
+import static page_objects.page_elements.HomePage.*;
+import static page_objects.page_steps.InputFieldClickButton.buttonClick;
+import static page_objects.page_steps.InputFieldClickButton.inputField;
 
 public class Authorization extends EdujiraStartPage {
 

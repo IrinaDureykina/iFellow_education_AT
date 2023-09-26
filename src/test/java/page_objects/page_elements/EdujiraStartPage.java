@@ -1,4 +1,4 @@
-package PageObjects.PageElements;
+package page_objects.page_elements;
 
 import com.codeborne.selenide.SelenideElement;
 
