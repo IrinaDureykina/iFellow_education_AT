@@ -4,9 +4,9 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
 
+import static com.codeborne.selenide.Selenide.switchTo;
 import static page_objects.page_elements.CreatingTaskForm.frameInputField;
 import static page_objects.page_elements.CreatingTaskForm.returnFrameField;
-import static com.codeborne.selenide.Selenide.switchTo;
 
 public class InputFieldClickButton {
 

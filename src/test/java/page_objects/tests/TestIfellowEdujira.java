@@ -1,14 +1,14 @@
 package page_objects.tests;
 
-import web_hooks.WebHooks;
 import org.junit.jupiter.api.Test;
+import web_hooks.WebHooks;
 
 import static page_objects.page_steps.Authorization.*;
+import static page_objects.page_steps.CheckUrl.checkUrlPageHref;
 import static page_objects.page_steps.CreatingTask.creatingTask;
 import static page_objects.page_steps.CreatingTask.switchingTask;
 import static page_objects.page_steps.OpenProject.countIssue;
 import static page_objects.page_steps.OpenProject.openProject;
-import static page_objects.page_steps.CheckUrl.checkUrlPageHref;
 import static page_objects.page_steps.SelectionTask.selectedTaskCheck;
 import static page_objects.page_steps.SelectionTask.selectionTask;
 
@@ -49,7 +49,7 @@ public class TestIfellowEdujira extends WebHooks {
         System.out.println("Test Сreating Task");
         authorization("login", "password");
         profileLogIn();
-        creatingTask();
+        creatingTask("issueType", "issueSummary");
         switchingTask();
     }
 }

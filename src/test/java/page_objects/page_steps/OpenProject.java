@@ -1,8 +1,8 @@
 package page_objects.page_steps;
 
+import com.codeborne.selenide.Condition;
 import io.cucumber.java.en.Then;
 import page_objects.page_elements.HomePage;
-import com.codeborne.selenide.Condition;
 
 import static page_objects.page_steps.InputFieldClickButton.buttonClick;
 import static util.Config.getProperties;

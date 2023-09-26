@@ -1,19 +1,23 @@
 package page_objects.page_steps;
 
-import page_objects.page_elements.CreatingTaskForm;
 import com.codeborne.selenide.Condition;
+import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
+import page_objects.page_elements.CreatingTaskForm;
 
 import static page_objects.page_elements.BrowseTaskPage.*;
 import static page_objects.page_elements.HomePage.*;
 import static page_objects.page_steps.InputFieldClickButton.*;
+import static util.Config.getProperties;
 
 public class CreatingTask extends CreatingTaskForm {
-    public static void creatingTask() {
+
+    @Then("Создаем задачу тип: {string} тема: {string}")
+    public static void creatingTask(String issueTypeKey, String issueSummaryKey) {
         buttonClick(createBatton, "Создать");
         issueTypeSelect.shouldBe(Condition.visible).doubleClick();
-        inputField(issueTypeSelect, "Ошибка", "Тип Задачи", true);
-        inputField(issueSummary, "Тема Ошибки", "Тема", false);
+        inputField(issueTypeSelect, getProperties(issueTypeKey), "Тип Задачи", true);
+        inputField(issueSummary, getProperties(issueSummaryKey), "Тема", false);
         inputFrame("Описание", "Описание Задачи");
         buttonClick(fixVersionSelector, "Исправить в версиях ");
         priorityselector.doubleClick();
@@ -34,6 +38,7 @@ public class CreatingTask extends CreatingTaskForm {
 
     }
 
+    @Then("Переводим созданную задачу по статусам")
     public static void switchingTask() {
 
         buttonClick(tasksButton, "Задачи");

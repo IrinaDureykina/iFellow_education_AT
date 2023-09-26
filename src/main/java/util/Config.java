@@ -13,13 +13,14 @@ public class Config {
     private static final Properties prop = new Properties();
 
     static {
-        try(InputStream input = new FileInputStream(CONFIG_FILE_PATH)){
+        try (InputStream input = new FileInputStream(CONFIG_FILE_PATH)) {
             prop.load(new InputStreamReader(input, StandardCharsets.UTF_8));
         } catch (IOException ex) {
             System.err.println("Ошибка при загрузке конфигурации: " + ex.getMessage());
             ex.printStackTrace();
         }
     }
+
     public static String getProperties(String key) {
         return prop.getProperty(key);
     }

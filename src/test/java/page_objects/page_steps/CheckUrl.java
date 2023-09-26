@@ -14,9 +14,7 @@ public class CheckUrl extends EdujiraStartPage {
     @Then("Проверяем {string} и наличие ссылки на главную страницу")
     public static void checkUrlPageHref(String url) {
 
-        Assertions.assertTrue(Objects.requireNonNull(homePageHref.shouldBe(Condition.visible).attr("href"))
-                        .contains(getProperties(url)),
-                "Страница не содержит ссылки на главную страницу или она не верна");
+        Assertions.assertTrue(Objects.requireNonNull(homePageHref.shouldBe(Condition.visible).attr("href")).contains(getProperties(url)), "Страница не содержит ссылки на главную страницу или она не верна");
 
         Assertions.assertTrue(WebDriverRunner.url().contains(getProperties(url)), "URL не совпадает с введенным");
     }

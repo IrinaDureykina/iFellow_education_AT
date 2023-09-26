@@ -1,8 +1,8 @@
 package page_objects.page_steps;
 
 import io.cucumber.java.en.Then;
-import page_objects.page_elements.HomePage;
 import org.junit.jupiter.api.Assertions;
+import page_objects.page_elements.HomePage;
 
 import static page_objects.page_elements.BrowseTaskPage.taskStatus;
 import static page_objects.page_elements.BrowseTaskPage.taskVersions;
@@ -21,7 +21,6 @@ public class SelectionTask extends HomePage {
     @Then("Сверяем {string} и привязку {string}")
     public static void selectedTaskCheck(String statusTaskKey, String affectVersionKey) {
         Assertions.assertEquals(getProperties(statusTaskKey), taskStatus.getOwnText(), "Не верный статус задачи");
-        Assertions.assertTrue(taskVersions.getOwnText().contains(getProperties(affectVersionKey))
-                , "Не верная привязка задачи к затронутой версии");
+        Assertions.assertTrue(taskVersions.getOwnText().contains(getProperties(affectVersionKey)), "Не верная привязка задачи к затронутой версии");
     }
 }

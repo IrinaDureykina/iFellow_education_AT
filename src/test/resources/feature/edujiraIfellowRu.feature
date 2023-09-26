@@ -1,4 +1,3 @@
-
 @ifellowEduJira
 Feature: ifellowEduJiraTest
 
@@ -31,5 +30,5 @@ Feature: ifellowEduJiraTest
   @creatingTaskTest
   Scenario: Создаем задачу и переводим созданную задачу по статусам
     When Вводим "login" вводим "password" и нажимаем Войти
-    Then Создаем задачу с типом Ошибка и темой "inputTopic" и получаем номер созданной задачи
+    Then Создаем задачу тип: "issueType" тема: "issueSummary"
     Then Переводим созданную задачу по статусам

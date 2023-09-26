@@ -6,8 +6,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/feature",
         glue = {"page_objects/page_steps", "web_hooks"},
-        snippets = CucumberOptions.SnippetType.CAMELCASE
-)
+        snippets = CucumberOptions.SnippetType.CAMELCASE)
 
 
 public class RunnerTest {
