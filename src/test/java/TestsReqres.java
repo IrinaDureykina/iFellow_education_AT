@@ -31,12 +31,12 @@ public class TestsReqres extends RequestSpecificationAndResponseTests {
         String filePath = "src/test/resources/reqres/reqres.json";
         JsonParser jsonParser = new JsonParser();
         FileReader fileReader = new FileReader(filePath);
-        JsonObject jsonObject = jsonParser.parse(fileReader).getAsJsonObject();
+        JsonObject newJsonFiles = jsonParser.parse(fileReader).getAsJsonObject();
         fileReader.close();
-        jsonObject.addProperty("name", nameReqres);
-        jsonObject.addProperty("job", jobReqres);
+        newJsonFiles.addProperty("name", nameReqres);
+        newJsonFiles.addProperty("job", jobReqres);
 
-        String body = jsonObject.toString();
+        String body = newJsonFiles.toString();
 
         createUsersRequest(request, endpoint, body, nameReqres, jobReqres);
     }
