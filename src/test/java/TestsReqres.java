@@ -29,6 +29,7 @@ public class TestsReqres extends RequestSpecificationAndResponseTests {
         String jobReqres = getProperties("jobReqres");
 
         String filePath = "src/test/resources/reqres/reqres.json";
+
         JsonParser jsonParser = new JsonParser();
         FileReader fileReader = new FileReader(filePath);
         JsonObject newJsonFiles = jsonParser.parse(fileReader).getAsJsonObject();
