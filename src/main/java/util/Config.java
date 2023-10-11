@@ -27,4 +27,3 @@ public class Config {
         return prop.getProperty(key);
     }
 }
-
