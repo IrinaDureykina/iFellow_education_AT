@@ -13,7 +13,7 @@ import static util.Config.getProperties;
 public class OpenUrl {
 
     @Before(order = 2)
-    public void openUrlGetEebDriver() {
+    public void openUrlGetWebDriver() {
 
         String openUrl = getProperties("URL");
         step("Открываем сайт: " +openUrl, () -> {
