@@ -8,7 +8,7 @@ import request_specification_and_response.RequestSpecificationAndResponseTests;
 
 public class GetCharacter extends RequestSpecificationAndResponseTests {
 
-    @Step("Получение характеристик персонажа по его Id: \"{2}\"")
+    @Step("Получение характеристик персонажа по его Id: \"{id}\"")
     public static JSONObject getCharacter(RequestSpecification request, String endpoint, String id) {
 
         Response response = responseGet(request, null, endpoint, "GET", "200");

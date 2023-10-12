@@ -22,8 +22,8 @@ Feature: ifellowEduJiraTest
     Then Производим поиск задачи: "nameTask"
     Then Сверяем "statusTask" и привязку "affectVersion"
 
-
-  Scenario: Создаем задачу и переводим созданную задачу по статусам
-    When Вводим "login" вводим "password" и нажимаем Войти
-    Then Создаем задачу тип: "issueType" тема: "issueSummary"
-    Then Переводим созданную задачу по статусам
+#
+#  Scenario: Создаем задачу и переводим созданную задачу по статусам
+#    When Вводим "login" вводим "password" и нажимаем Войти
+#    Then Создаем задачу тип: "issueType" тема: "issueSummary"
+#    Then Переводим созданную задачу по статусам

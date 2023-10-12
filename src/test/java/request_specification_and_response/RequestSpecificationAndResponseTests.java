@@ -1,7 +1,8 @@
 package request_specification_and_response;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
-import io.restassured.internal.filter.SendRequestFilter;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -9,7 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class RequestSpecificationAndResponseTests {
 
-    @Step("Составление RequestSpecification по: {string}")
+    @Step("Составление RequestSpecification по: {url}")
     public static RequestSpecification requestSpecificationTests(String url) {
 
         return given()
@@ -18,10 +19,10 @@ public class RequestSpecificationAndResponseTests {
                 .header("Content-Type", "application/json")
                 .log()
                 .uri()
-                .filter(new SendRequestFilter());
+                .filter(new AllureRestAssured());
     }
 
-    @Step("Отправка запроса с параметрами: body: \"{1}\", method: \"{3}\" Получение response и проверка statusCode: \"{4}\"")
+    @Step("Отправка запроса с параметрами: body: \"{bodyValue}\", method: \"{method}\" Получение response и проверка statusCode: \"{statusCode}\"")
     public static Response responseGet(RequestSpecification request, String bodyValue, String endpoint, String method, String statusCode) {
 
         RequestSpecification updatedRequest = request;
@@ -45,6 +46,9 @@ public class RequestSpecificationAndResponseTests {
         }
 
         assert response != null;
+
+        Allure.addAttachment("Response", "application/json", response.asString());
+
         return response
                 .then()
                 .statusCode(Integer.parseInt(statusCode))

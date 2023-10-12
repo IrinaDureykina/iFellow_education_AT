@@ -2,6 +2,7 @@ package page_objects.page_steps;
 
 import com.codeborne.selenide.Condition;
 import io.cucumber.java.en.Then;
+import io.qameta.allure.Step;
 import page_objects.page_elements.HomePage;
 
 import static page_objects.page_steps.InputFieldClickButton.buttonClick;
@@ -9,6 +10,7 @@ import static util.Config.getProperties;
 
 public class OpenProject extends HomePage {
 
+    @Step("Заходим в проект")
     @Then("Заходим в проект {string}")
     public static void openProject(String nameProjectKey) {
 
@@ -17,6 +19,7 @@ public class OpenProject extends HomePage {
         buttonClick(allIssues, "Задачи");
     }
 
+    @Step("Получаем количество задач в проекте")
     @Then("Получаем количество задач в проекте")
     public static String countIssue() {
         assert countIssues.is(Condition.visible) : "Количество задач не отображается.";

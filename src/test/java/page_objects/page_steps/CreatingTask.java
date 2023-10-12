@@ -2,6 +2,7 @@ package page_objects.page_steps;
 
 import com.codeborne.selenide.Condition;
 import io.cucumber.java.en.Then;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import page_objects.page_elements.CreatingTaskForm;
 
@@ -12,6 +13,7 @@ import static util.Config.getProperties;
 
 public class CreatingTask extends CreatingTaskForm {
 
+    @Step("Создаем задачу")
     @Then("Создаем задачу тип: {string} тема: {string}")
     public static void creatingTask(String issueTypeKey, String issueSummaryKey) {
         buttonClick(createBatton, "Создать");

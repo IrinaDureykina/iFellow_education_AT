@@ -8,7 +8,7 @@ import request_specification_and_response.RequestSpecificationAndResponseTests;
 
 public class GetInEpisodelastCharactersNumber extends RequestSpecificationAndResponseTests {
 
-    @Step("Получение Id последнего персонажа в эпизоде Id: \"{2}\"")
+    @Step("Получение Id последнего персонажа в эпизоде Id: \"{idEpisode}\"")
     public static String getInEpisodeLastCharactersNumber(RequestSpecification request, String endpoint, String idEpisode) {
 
         Response response = responseGet(request, null, endpoint, "GET", "200");

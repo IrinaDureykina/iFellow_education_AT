@@ -22,6 +22,3 @@ public class CreateUsersRequest extends RequestSpecificationAndResponseTests {
     }
 
 }
-
-// .body("id", typeCompatibleWith(Intager.class))
-// .body("createdAt", typeCompatibleWith(String.class));
