@@ -18,13 +18,15 @@ public class TestsRickAndMortyApi extends RequestSpecificationAndResponseTests {
     protected RequestSpecification request = requestSpecificationTests(getProperties("UrlRickAndMorti"));
 
     @Feature("Сайт https://rickandmortyapi.com")
-    @DisplayName("Тест Проверки открытия стартовой страницы")@Test
+    @DisplayName("Тест Проверки открытия стартовой страницы")
+    @Test
     public void testOpenUrl() {
         openUrl(request);
     }
 
     @Feature("Сайт https://rickandmortyapi.com")
-    @DisplayName("Тест Получение и сравнение характеристик персонажей")@Test
+    @DisplayName("Тест Получение и сравнение характеристик персонажей")
+    @Test
     public void testGetCharacterAndGetLastEpisodeAndGetLastCharacter() {
 
         String endpoint = "character/" + getProperties("character");
