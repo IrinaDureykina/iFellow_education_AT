@@ -35,7 +35,7 @@ public class Authorization extends EdujiraStartPage {
         buttonClick(profileLink, "Ссылка профиль");
     }
 
-    @Step("Сверяем имя профиля с введенным {string}")
+    @Step("Сверяем имя профиля с введенным {loginKey}")
     @Then("Сверяем имя профиля с введенным {string}")
     public static void authorizationCheck(String loginKey) {
         Assertions.assertEquals(nameUser.shouldBe(Condition.visible).getOwnText(), getProperties(loginKey), "Не авторизованы");

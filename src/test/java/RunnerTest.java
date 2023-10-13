@@ -1,10 +1,8 @@
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import io.qameta.allure.Epic;
 import org.junit.runner.RunWith;
 
 
-@Epic("Cucumber")
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/feature/edujiraIfellowRu.feature",
         glue = {"page_objects/page_steps", "web_hooks"},

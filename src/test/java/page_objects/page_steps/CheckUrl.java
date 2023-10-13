@@ -12,7 +12,7 @@ import java.util.Objects;
 import static util.Config.getProperties;
 
 public class CheckUrl extends EdujiraStartPage {
-    @Step("Проверяем url и наличие ссылки на главную страницу")
+    @Step("Проверяем {url} и наличие ссылки на главную страницу")
     @Then("Проверяем {string} и наличие ссылки на главную страницу")
     public static void checkUrlPageHref(String url) {
 

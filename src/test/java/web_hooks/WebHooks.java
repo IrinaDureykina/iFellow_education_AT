@@ -12,10 +12,6 @@ import io.qameta.allure.Attachment;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.OutputType;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-import static io.qameta.allure.Allure.step;
-
 
 public class WebHooks {
     @Before(order = 1)
@@ -45,5 +41,6 @@ public class WebHooks {
     public void afterTest() {
         saveScreenshot();
         WebDriverRunner.closeWebDriver();
+        SelenideLogger.removeListener("Allureselenide");
     }
 }
