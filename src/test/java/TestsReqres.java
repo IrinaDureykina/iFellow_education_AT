@@ -17,7 +17,7 @@ import static util.Config.getProperties;
 @Epic("Rest Assured Api")
 public class TestsReqres extends RequestSpecificationAndResponseTests {
 
-    protected RequestSpecification request = requestSpecificationTests(getProperties("UrlReqres"));
+    protected final RequestSpecification request = requestSpecificationTests(getProperties("UrlReqres"));
 
     @Feature("Сайт https://reqres.in")
     @DisplayName("Тест Проверки открытия стартовой страницы")

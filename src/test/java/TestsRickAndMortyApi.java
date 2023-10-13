@@ -15,7 +15,7 @@ import static util.Config.getProperties;
 @Epic("Rest Assured Api")
 public class TestsRickAndMortyApi extends RequestSpecificationAndResponseTests {
 
-    protected RequestSpecification request = requestSpecificationTests(getProperties("UrlRickAndMorti"));
+    protected final RequestSpecification request = requestSpecificationTests(getProperties("UrlRickAndMorti"));
 
     @Feature("Сайт https://rickandmortyapi.com")
     @DisplayName("Тест Проверки открытия стартовой страницы")
